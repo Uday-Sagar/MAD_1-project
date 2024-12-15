@@ -1,0 +1,37 @@
+{% extends "sponsor_base.html" %}
+
+
+{% block content %}
+    <div class="campaign-container">
+    <form method="POST" enctype="multipart/form-data" >
+        <div class="form-group">
+            <label for="campaign_name" class="form-label">Campaign Name:</label>
+            <input type="text" class="form-control" id="campaign_name" name="campaign_name"required>
+        </div>
+        <div class="form-group">
+            <label for="description" class="form-label">Description</label>
+            <textarea type="text" class="form-control" id="description" name="description" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="start_date" class="form-label">Start Date</label>
+            <input type="date" class="form-control" id="start_date" name="start_date" required>
+        </div>
+        <div class="form-group">
+            <label for="end_date" class="form-label">End Date</label>
+            <input type="date" class="form-control" id="end_date" name="end_date" required>
+        </div>
+        <div class="form-group">
+            <label for="budget" class="form-label">Budget</label>
+            <input type="number" class="form-control" id="end_date" name="budget">
+        </div>
+        <div class="form-group">
+            <label for="visibility" class="form-label">Visibility</label>
+            <select name="visibility" id="visibility" class="form-select">
+                <option value="Public" >Public</option>
+                <option value="Private" >Private</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+    </div>
+{% endblock %}

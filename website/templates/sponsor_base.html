@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Sponsor Page{% endblock %}
+{% block side_bar_options %}
+<h3>Hello {{sponsor_name}}</h3>
+<br>
+<br>
+<br>
+<nav class="navbar bg-body">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{{ url_for('views.sponsor_home') }}">Home</a>    
+    </div>
+</nav>
+<br>
+<br>
+<nav class="navbar bg-body">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{{ url_for('views.manage_campaigns') }}">My Campaigns</a>  
+    </div>
+</nav>
+<br>
+<br>
+<nav class="navbar bg-body">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{{url_for('views.manage_requests')}}">Ad Requests</a>
+    </div>
+</nav>
+<br>
+{% endblock %}
+

@@ -1,0 +1,24 @@
+{% extends "influ_base.html" %}
+
+{% block content %}
+       <form method="post", action="{{ url_for('views.edit_influ_profile',influencer_id=influencer.influencer_id) }}">
+            <button type="submit" class="btn btn-secondary" >
+                Edit your profile :)
+            </button>
+
+        </form>
+        </button>
+    <div class="container mt-5" style="display: flex; justify-content: space-between;">
+        <div style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{influencer.name }}</h5>
+                <p class="card-text"><strong>Mail: {{influencer.mail_id}}</strong></p>
+                <p class="card-text"><strong>Category: {{influencer.category}}</strong></p>
+                <p class="card-text"><strong>Niche: {{influencer.niche}}</strong></p>
+                <p class="card-text"><strong>Reach: {{influencer.reach}}</strong></p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+

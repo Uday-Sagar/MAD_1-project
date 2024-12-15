@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Influencer Page{% endblock %}
+{% block side_bar_options %}
+<h3>Hello {{influ_name}}</h3>
+<br>
+<br>
+<br>
+<nav class="navbar bg-body">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{{ url_for('views.influ_home') }}">Home</a>    
+    </div>
+</nav>
+<br>
+<br>
+<nav class="navbar bg-body">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{{ url_for('views.influ_profile')}}">My profile</a>    
+    </div>
+</nav>
+<br>
+<br>
+<br>
+{% endblock %}
+
+{% block content %}
+
+{% endblock %}

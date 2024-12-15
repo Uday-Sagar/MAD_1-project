@@ -1,0 +1,41 @@
+{% extends "admin_base.html" %}
+{% block content %}
+    <h4>Shows the list of influencers registered, and can flag them</h4>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Niche</th>
+                    <th>Reach</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for inf in influencers %}
+                <tr>
+                    <td>{{ inf.name }}</td>
+                    <td>{{ inf.category }}</td>
+                    <td>{{ inf.niche }}</td>
+                    <td>{{ inf.reach }}</td>
+                    <td>
+                        <form action="{{ url_for('views.flag_influencer', influ_id=inf.influencer_id) }}"
+                         method="post" style="display:inline;">
+                            {% if inf.is_flag %}
+                            <button type="submit" class="btn btn-danger btn-sm">Un-Flag</button>
+                            {% else %}
+                            <button type="submit" class="btn btn-danger btn-sm">Flag</button>
+                            {% endif %}
+                        </form>
+                    </td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="5">No Influencers found</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

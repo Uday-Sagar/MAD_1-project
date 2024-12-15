@@ -1,0 +1,36 @@
+{% extends "admin_base.html" %}
+{% block content %}
+    <h4>Registered Campaigns</h4>
+    <br>
+            <br>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Campaign Name</th>
+                            <th>Description</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Budget Allocated</th>
+                            <th>Visibility</th>
+                        </tr>            
+                    </thead>
+                    <tbody>
+                    {% for cpg in campaigns %}
+                        <tr>
+                            <td>{{ cpg.campaign_name }}</td>
+                            <td>{{ cpg.description }}</td>
+                            <td>{{ cpg.start_date }}</td>
+                            <td>{{ cpg.end_date }}</td>
+                            <td>{{ cpg.budget }}</td>
+                            <td>{{ cpg.visibility }}</td>
+                        </tr>
+                    {% else %}
+                    <tr>
+                        <td colspan="7">No campaigns found</td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>  
+{% endblock %}
